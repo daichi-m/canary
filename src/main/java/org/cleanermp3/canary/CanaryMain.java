@@ -1,10 +1,10 @@
-package org.cleanermp3;
+package org.cleanermp3.canary;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class CanaryMain
 {
     public static void main( String[] args )
     {
