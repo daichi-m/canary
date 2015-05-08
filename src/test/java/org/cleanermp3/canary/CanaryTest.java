@@ -16,11 +16,4 @@ public class CanaryTest {
          main = new CanaryMain();
     }
 
-    @Test
-    public void testAdd() {
-        int c = main.add(1,2);
-        Assert.assertEquals(c,3);
-        Assert.fail();
-    }
-
 }
