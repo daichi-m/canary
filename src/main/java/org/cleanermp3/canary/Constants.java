@@ -13,4 +13,8 @@ public interface Constants {
     String MUSIC_DIR_TAG = "music.directory";
     String USER_HOME_TAG = "user.home";
 
+    String MP3_MEDIA_TYPE = "audio/mpeg";
+
+    String LOG4J_LOGGER = "canaryLogger";
+
 }

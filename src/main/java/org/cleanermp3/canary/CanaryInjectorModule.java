@@ -1,16 +1,19 @@
 package org.cleanermp3.canary;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 import com.google.inject.name.Names;
 import org.cleanermp3.canary.filter.CanaryFilterModule;
 import org.cleanermp3.canary.normalizer.CanaryNormalizerModule;
 import org.cleanermp3.canary.processor.CanaryFlight;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Stack;
 
 /**
  * Created by daichi on 8/5/15.
@@ -47,5 +50,10 @@ public class CanaryInjectorModule extends AbstractModule {
             defaultProps.put(Constants.MUSIC_DIR_TAG, Constants.DEFAULT_MUSIC_DIR);
             Names.bindProperties(binder(), defaultProps);
         }
+    }
+
+    @Provides
+    public Stack<File> getDirectoryStack() {
+        return new Stack<>();
     }
 }
