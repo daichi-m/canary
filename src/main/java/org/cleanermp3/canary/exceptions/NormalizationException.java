@@ -1,5 +1,5 @@
 package org.cleanermp3.canary.exceptions;
 
-public class NormalizationException extends CanaryBaseException {
+public class NormalizationException extends CanaryException {
 
 }
