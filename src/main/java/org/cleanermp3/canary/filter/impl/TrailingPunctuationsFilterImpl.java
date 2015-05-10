@@ -15,6 +15,11 @@ public class TrailingPunctuationsFilterImpl implements Filter {
     private static Logger logger = Logger.getLogger(Constants.LOG4J_LOGGER);
     @Override
     public String filter(String raw) throws FilterException {
+
+        if(raw == null || raw.length() == 0) {
+            return Constants.UNKNOWN;
+        }
+
         String processed = raw;
         String matGrp;
         Matcher matcher = Constants.BRACKET_PATTERN.matcher(raw);
@@ -36,6 +41,7 @@ public class TrailingPunctuationsFilterImpl implements Filter {
                 logger.debug("Matched and Removed: " + matGrp);
                 processed = processed.replace(matGrp, Constants.EMPTY);
             }
+            logger.debug("Finally processed to " + processed.trim());
             return processed.trim();
         } catch (Exception ex) {
             throw new FilterException(ex);

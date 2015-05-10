@@ -1,9 +1,8 @@
 package org.cleanermp3.canary.normalizer;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.multibindings.Multibinder;
-import org.cleanermp3.canary.normalizer.NormalizerAnnotations.TitleCaseNormalizer;
 import org.cleanermp3.canary.normalizer.NormalizerAnnotations.ArtistNameNormalizer;
+import org.cleanermp3.canary.normalizer.NormalizerAnnotations.TitleCaseNormalizer;
 import org.cleanermp3.canary.normalizer.impl.ArtistNameNormalizerImpl;
 import org.cleanermp3.canary.normalizer.impl.TitleCaseNormalizerImpl;
 

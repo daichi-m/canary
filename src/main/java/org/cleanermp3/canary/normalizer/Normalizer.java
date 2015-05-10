@@ -1,5 +1,6 @@
 package org.cleanermp3.canary.normalizer;
 
+import org.cleanermp3.canary.Constants;
 import org.cleanermp3.canary.exceptions.NormalizationException;
 
 /**
@@ -7,5 +8,6 @@ import org.cleanermp3.canary.exceptions.NormalizationException;
  */
 public interface Normalizer {
 	
-	public String normalize(String raw) throws NormalizationException;
+	public String normalize(String raw, Constants.TagContents what)
+			throws NormalizationException;
 }

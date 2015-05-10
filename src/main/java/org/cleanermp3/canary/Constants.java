@@ -22,6 +22,7 @@ public interface Constants {
 
     String EMPTY= "";
     String EXCEPTION_DEFAULT_MSG = "Exception Faced";
+    String UNKNOWN = "Unknown";
 
     enum TagContents {
         TITLE,

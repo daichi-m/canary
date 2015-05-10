@@ -1,7 +1,8 @@
 package org.cleanermp3.canary.normalizer;
 
 import com.google.inject.Inject;
-import org.cleanermp3.canary.normalizer.NormalizerAnnotations.*;
+import org.cleanermp3.canary.normalizer.NormalizerAnnotations.ArtistNameNormalizer;
+import org.cleanermp3.canary.normalizer.NormalizerAnnotations.TitleCaseNormalizer;
 
 import java.util.Arrays;
 import java.util.List;
