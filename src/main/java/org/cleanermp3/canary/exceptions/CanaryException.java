@@ -45,7 +45,7 @@ public class CanaryException extends Exception {
 
     public String convertToString(StackTraceElement[] stack) {
         StringBuilder builder = new StringBuilder();
-        String gap = "\t\t";
+        String gap = "\t";
         for(StackTraceElement elem : stack) {
             builder.append(gap)
                     .append(elem.toString())

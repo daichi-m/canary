@@ -15,7 +15,7 @@ public interface FilterAnnotations {
     @BindingAnnotation
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
     @Retention(RetentionPolicy.RUNTIME)
-    public @interface BracketFilter {}
+    public @interface TrailingPunctuationFilter {}
 
     @BindingAnnotation
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})

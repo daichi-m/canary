@@ -3,7 +3,7 @@ package org.cleanermp3.canary;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.apache.log4j.Logger;
-import org.cleanermp3.canary.exceptions.CanaryBaseException;
+import org.cleanermp3.canary.exceptions.CanaryException;
 import org.cleanermp3.canary.processor.CanaryFlight;
 
 /**
@@ -19,7 +19,7 @@ public class CanaryMain
         CanaryFlight flight = injector.getInstance(CanaryFlight.class);
         try {
             flight.flap();
-        } catch (CanaryBaseException base) {
+        } catch (CanaryException base) {
             log.error(base);
         }
     }

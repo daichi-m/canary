@@ -7,6 +7,7 @@ import org.cleanermp3.canary.exceptions.FilterException;
  */
 public interface Filter {
 	
-	public String filter(String raw) throws FilterException;
+	public String filter(String raw)
+			throws FilterException;
 	
 }

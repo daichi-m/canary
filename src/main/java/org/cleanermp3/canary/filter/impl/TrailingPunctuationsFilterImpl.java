@@ -10,19 +10,27 @@ import java.util.regex.Matcher;
 /**
  * Created by daichi on 8/5/15.
  */
-public class UrlFilterImpl implements Filter {
+public class TrailingPunctuationsFilterImpl implements Filter {
 
     private static Logger logger = Logger.getLogger(Constants.LOG4J_LOGGER);
     @Override
-    public String filter(String raw)
-            throws FilterException {
-
-        Matcher matcher = Constants.URL_PATTERN.matcher(raw);
+    public String filter(String raw) throws FilterException {
         String processed = raw;
         String matGrp;
+        Matcher matcher = Constants.BRACKET_PATTERN.matcher(raw);
+        logger.debug("Filtering Trailing Punctuations: " + raw);
 
-        logger.debug("Url Filtering: " + raw);
         try {
+            // Remove trailing dangling brackets
+            while (matcher.find()) {
+                matGrp = matcher.group();
+                logger.debug("Matched and Removed: " + matGrp);
+                processed = processed.replace(matGrp, Constants.EMPTY);
+            }
+            processed = processed.trim();
+
+            // Remove dangling - at the end
+            matcher = Constants.TRAILING_PUNCT_PATTERN.matcher(processed);
             while (matcher.find()) {
                 matGrp = matcher.group();
                 logger.debug("Matched and Removed: " + matGrp);
